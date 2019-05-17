@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{entrega1 algoritmos}
+\author{Vinnie Giuliano Mellizo }
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Camino Hamiltoniano}
+Con una reducción de ciclo hamiltoniano, demostrar que camino hamiltoniano es NP-Completo
+
+Sea un grafo G=(V,E)
+Si G tiene un ciclo Hamiltoniano y \[v,w, w' \in V,\] entonces existen \[(v,w) \wedge (w',v) \in E \] tal que inician y terminan el ciclo. Podemos definir una tranformación polinomial f(G) que nos permita convertir el ciclo hamiltoniano a camino hamiltoniano, así:
+
+Si
+\[ v' \not\in V \] entonces \[ f(g) = (V \cup \left\lbrace v' \right\rbrace, E \cup \lbrace (w',v')\rbrace) \]
+
+De este modo, si existe el ciclo hamiltoniano para G (v,w),...,(w',v) entonces existe camino hamiltoniano para f(g) de la forma (v,w),...,(w',v').
+
+Finalmente, sabemos por teorema de Hook que, dado que el ciclo hamiltoniano es un problema NP-completo y existe una transformación polinomial entre ciclo hamiltoniano y camino hamiltoniano, entonces el problema del camino hamiltoniano es también NP-completo.
+
+\section{TSP (travelling Sale Person)}
+
+El problema de encontrar un camino o ciclo hamiltoniano es NP-completo y es un caso particular del problema TSP.
+
+Sea un grafo G=(V,E), se construye un ejemplo de TSP con |V| ciudades, siendo los pesos entre cada ciudad \[d_{ij}=1\] si \[ [v_{i},v_{j}]\in E\] e igual a 2 en otro caso. De este modo es evidente que el circuito hamiltoniano del grafo G (o en su defecto el camino hamiltoniano, cuando el nodo inicial y final es el mismo) corresponde al camino de menor costo para el TSP. Por tanto, el TSP es NP-completo.
+
+
+
+\end{document}
